@@ -1,3 +1,4 @@
+// Oversettelser
 const translationMap = {
   // Enheter
   oz: 'cl',
@@ -26,6 +27,14 @@ const translationMap = {
   Ginger: 'Ingefær',
   Milk: 'Melk',
   Cream: 'Fløte',
+  Strawberry: 'Jordbær',
+  Strawberries: 'Jordbær',
+  Banana: 'Banan',
+  'Apple juice': 'Eplejuice',
+  Honey: 'Honning',
+  Yogurt: 'Yoghurt',
+  'Plain Yogurt': 'Naturell yoghurt',
+  Salt: 'Salt',
 
   // Enkle instruksjoner
   Shake: 'Rist',
@@ -50,7 +59,18 @@ const translationMap = {
   Strain: 'Sil',
   Cool: 'Avkjøl',
   Combine: 'Bland',
-  Chill: 'Sett kaldt'
+  Chill: 'Sett kaldt',
+  Smooth: 'Jevn',
+  'Throw everything': 'Ha alt',
+  'all together': 'alt sammen',
+  'Blender': 'Blender',
+  'Blender jar': 'Blenderkanne',
+  'Until smooth': 'Til det er jevnt',
+  'Drink up': 'Drikk opp',
+  'To taste': 'Etter smak',
+  'Rub rim': 'Gni kanten',
+  'Dip rim': 'Dypp kanten',
+  'Shake well': 'Rist godt'
 };
 
 function translateText(text) {
@@ -95,6 +115,7 @@ function showDrinkDetails(id, container) {
       console.error(error);
     });
 }
+
 
 // Søker etter drink ved navn
 document.getElementById('searchBtn').addEventListener('click', () => {

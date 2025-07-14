@@ -1,0 +1,408 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  background-color: #222;
+  color: #fff;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+h2 {
+  margin-top: 2rem;
+  color: #444;
+}
+
+section {
+  padding: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  background: #fff;
+  margin-bottom: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+}
+
+input[type='text'] {
+  padding: 0.5rem;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 300px;
+  margin-right: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+button:hover {
+  background: #45a049;
+}
+
+.ingredients {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin: 1rem 0;
+}
+
+.ingredients label {
+  background: #eee;
+  padding: 0.5rem 0.8rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.ingredients input[type='checkbox'] {
+  margin-right: 0.4rem;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 1rem;
+  background: #f0f0f0;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.05);
+}
+
+img {
+  max-width: 100px;
+  border-radius: 6px;
+}
+
+.drink-details {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #fff8e1;
+  border-left: 4px solid #ffc107;
+  border-radius: 8px;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: #222;
+  color: #fff;
+  margin-top: 2rem;
+}
+
+/* Mobilvennlig */
+@media (max-width: 600px) {
+  .ingredients {
+    flex-direction: column;
+  }
+
+  button,
+  input[type='text'] {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  img {
+    max-width: 80px;
+  }
+}
+/* === DRINKKORT / RESULTATER === */
+.drink-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  margin: 1.5rem 0;
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.drink-card img {
+  width: 120px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.drink-info {
+  flex: 1;
+}
+
+.drink-info h3 {
+  margin-top: 0;
+  font-size: 1.2rem;
+}
+
+.drink-info p {
+  margin: 0.2rem 0;
+}
+
+.drink-info strong {
+  display: block;
+  margin-top: 0.6rem;
+}
+
+.drink-details {
+  background-color: #fff8e1;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-left: 4px solid #ffc107;
+  border-radius: 8px;
+}
+
+/* Responsiv */
+@media (max-width: 600px) {
+  .drink-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .drink-card img {
+    width: 80%;
+    max-width: 200px;
+  }
+}
+/* === DRINK-KORT === */
+.drink-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #fff8e1;
+  border: 1px solid #f0e1b0;
+  border-radius: 8px;
+  margin: 1.5rem auto;
+  max-width: 800px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.drink-card img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.drink-card h3 {
+  margin-top: 0;
+  font-size: 1.1rem;
+}
+
+.drink-details {
+  flex: 1;
+  font-size: 0.95rem;
+}
+
+.drink-details p {
+  margin: 0.5rem 0;
+}
+
+.drink-details strong {
+  display: block;
+  margin-top: 0.5rem;
+}
+/* === DRINK-KORT - NY TØFF STIL === */
+.drink-card {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1.2rem;
+  background: linear-gradient(145deg, #fffef8, #fcefc7);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1.5rem auto;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  max-width: 850px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid #f4e3b8;
+}
+
+.drink-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+.drink-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  flex-shrink: 0;
+}
+
+.drink-details {
+  flex: 1;
+  font-size: 1rem;
+  color: #333;
+}
+
+.drink-card h3 {
+  font-size: 1.25rem;
+  margin: 0 0 0.5rem;
+  font-weight: 600;
+  color: #402c10;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.drink-card h3::before {
+  content: '🍹';
+}
+
+.drink-details p {
+  margin: 0.3rem 0;
+  line-height: 1.4;
+}
+
+.drink-details strong {
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 0.3rem;
+  display: inline-block;
+}
+
+/* Mobilrespons */
+@media (max-width: 600px) {
+  .drink-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .drink-card img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .drink-card h3 {
+    justify-content: center;
+  }
+
+  .drink-details {
+    font-size: 0.95rem;
+  }
+}
+/* === Mobiloptimalisert DRINK-KORT === */
+.drink-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fffef8;
+  border-radius: 14px;
+  padding: 1.2rem;
+  margin: 1.5rem auto;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  border: 1px solid #f2e1b3;
+  max-width: 95%;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.drink-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.drink-card img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.drink-card h3 {
+  font-size: 1.3rem;
+  margin: 0 0 0.6rem;
+  font-weight: 600;
+  color: #3a2d13;
+  text-align: center;
+}
+
+.drink-details {
+  text-align: left;
+  font-size: 1rem;
+  line-height: 1.5;
+  width: 100%;
+}
+
+.drink-details p {
+  margin: 0.4rem 0;
+}
+
+.drink-details strong {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+  color: #222;
+}
+
+/* Desktop - justerer layout */
+@media (min-width: 768px) {
+  .drink-card {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1.5rem;
+    max-width: 800px;
+  }
+
+  .drink-card img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 0;
+  }
+
+  .drink-details {
+    flex: 1;
+  }
+
+  .drink-card h3 {
+    text-align: left;
+  }
+}
+.non-alcoholic-wrapper {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+#nonAlcoholicBtn {
+  background-color: #757be3;
+  border: 1px solid #ccc;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#nonAlcoholicBtn:hover {
+  background-color: #e3e3e3;
+}

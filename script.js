@@ -1,3 +1,45 @@
+// Oversettelser
+const translationMap = {
+  "Lime juice": "Limesaft",
+  "Cranberry juice": "Tranebærjuice",
+  "Orange juice": "Appelsinjuice",
+  "Pineapple juice": "Ananasjuice",
+  "Sugar": "Sukker",
+  "Lemon juice": "Sitronjuice",
+  "Milk": "Melk",
+  "Cream": "Fløte",
+  "Soda water": "Kullsyreholdig vann",
+  "Tonic water": "Tonic",
+  "Triple Sec": "Triple sec",
+
+  // Enheter
+  "oz": "cl",
+  "tsp": "ts",
+  "tbsp": "ss",
+  "parts": "deler",
+
+  // Enkle instruksjoner
+  "Shake": "Rist",
+  "Stir": "Rør",
+  "Pour": "Hell",
+  "Add": "Tilsett",
+  "Serve": "Server",
+  "Fill": "Fyll",
+  "Garnish": "Pynt",
+  "mix": "bland",
+};
+
+function translateText(text) {
+  if (!text) return "";
+  let translated = text;
+  for (const [en, no] of Object.entries(translationMap)) {
+    const regex = new RegExp(`\\b${en}\\b`, "gi");
+    translated = translated.replace(regex, no);
+  }
+  return translated;
+}
+
+// Viser detaljer for drink
 function showDrinkDetails(id, container) {
   fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`)
     .then(res => res.json())
@@ -9,12 +51,18 @@ function showDrinkDetails(id, container) {
         for (let i = 1; i <= 15; i++) {
           const ing = drink[`strIngredient${i}`];
           const measure = drink[`strMeasure${i}`];
-          if (ing) ingredients.push(`${measure || ""} ${ing}`.trim());
+          if (ing) {
+            const translatedIngredient = translateText(ing);
+            const translatedMeasure = translateText(measure || "");
+            ingredients.push(`${translatedMeasure} ${translatedIngredient}`.trim());
+          }
         }
+
+        const instructions = translateText(drink.strInstructions || "");
 
         container.innerHTML += `
           <p><strong>Ingredienser:</strong><br>${ingredients.join("<br>")}</p>
-          <p><strong>Fremgangsmåte:</strong> ${drink.strInstructions}</p>
+          <p><strong>Fremgangsmåte:</strong> ${instructions}</p>
         `;
       }
     })
@@ -24,6 +72,7 @@ function showDrinkDetails(id, container) {
     });
 }
 
+// Søker etter drink ved navn
 document.getElementById("searchBtn").addEventListener("click", () => {
   const searchTerm = document.getElementById("searchInput").value.trim();
   const container = document.getElementById("result");
@@ -60,6 +109,7 @@ document.getElementById("searchBtn").addEventListener("click", () => {
     });
 });
 
+// Søker etter drinker basert på valgte ingredienser
 document.getElementById("findBtn").addEventListener("click", () => {
   const checked = document.querySelectorAll('input[name="ingredient"]:checked');
   const ingredients = Array.from(checked).map(i => i.value);
@@ -98,6 +148,7 @@ document.getElementById("findBtn").addEventListener("click", () => {
     });
 });
 
+// Tilbakestill alt
 document.getElementById('resetBtn').addEventListener('click', () => {
   document.getElementById('result').innerHTML = '';
   document.getElementById('matchResult').innerHTML = '';
@@ -106,6 +157,7 @@ document.getElementById('resetBtn').addEventListener('click', () => {
   document.querySelectorAll('input[name="ingredient"]').forEach(cb => cb.checked = false);
 });
 
+// Vis alkoholfrie drinker
 document.getElementById("nonAlcoholicBtn").addEventListener("click", () => {
   const container = document.getElementById("result");
   container.innerHTML = "<p>Laster inn alkoholfrie drinker...</p>";

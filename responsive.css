@@ -1,0 +1,80 @@
+/* Mobilvennlig */
+@media (max-width: 600px) {
+  .ingredients {
+    flex-direction: column;
+  }
+
+  button,
+  input[type='text'] {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  img {
+    max-width: 80px;
+  }
+}
+@media (max-width: 600px) {
+  .drink-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .drink-card img {
+    width: 80%;
+    max-width: 200px;
+  }
+}
+@media (max-width: 600px) {
+  .drink-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .drink-card img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .drink-card h3 {
+    justify-content: center;
+  }
+
+  .drink-details {
+    font-size: 0.95rem;
+  }
+}
+@media (min-width: 768px) {
+  .drink-card {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1.5rem;
+    max-width: 800px;
+  }
+
+  .drink-card img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 0;
+  }
+
+  .drink-details {
+    flex: 1;
+  }
+
+  .drink-card h3 {
+    text-align: left;
+  }
+}
+@media (max-width: 600px) {
+  .ingredients label {
+    font-size: 0.95rem;
+    padding: 0.4rem 0.6rem;
+  }
+
+  .toggle-ingredients-btn {
+    width: 100%;
+  }
+}

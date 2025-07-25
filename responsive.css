@@ -78,3 +78,16 @@
     width: 100%;
   }
 }
+@media (max-width: 600px) {
+  .drink-details {
+    padding: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .drink-details img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 1rem auto;
+  }
+}

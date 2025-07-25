@@ -1,93 +1,64 @@
-/* Mobilvennlig */
-@media (max-width: 600px) {
-  .ingredients {
-    flex-direction: column;
-  }
+/* Global forbedring */
+* {
+  box-sizing: border-box;
+}
 
-  button,
-  input[type='text'] {
+body {
+  scroll-padding-top: 100px;
+}
+
+/* Mobiltilpasninger */
+@media (max-width: 600px) {
+  .search-section input {
     width: 100%;
     margin-bottom: 0.5rem;
   }
 
-  img {
-    max-width: 80px;
+  .search-section button {
+    width: 100%;
   }
-}
-@media (max-width: 600px) {
+
+  .suggestions-section button {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .drinks-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .drink-card {
+    width: 90%;
+    max-width: 300px;
     flex-direction: column;
     align-items: center;
     text-align: center;
   }
 
   .drink-card img {
-    width: 80%;
+    width: 100%;
     max-width: 200px;
-  }
-}
-@media (max-width: 600px) {
-  .drink-card {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .drink-card img {
-    width: 80px;
-    height: 80px;
-  }
-
-  .drink-card h3 {
-    justify-content: center;
+    height: auto;
   }
 
   .drink-details {
+    padding: 1rem;
     font-size: 0.95rem;
-  }
-}
-@media (min-width: 768px) {
-  .drink-card {
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 1.5rem;
-    max-width: 800px;
+    max-width: 100%;
+    box-shadow: none;
+    margin: 1rem;
   }
 
-  .drink-card img {
-    width: 100px;
-    height: 100px;
-    margin-bottom: 0;
-  }
-
-  .drink-details {
-    flex: 1;
-  }
-
-  .drink-card h3 {
-    text-align: left;
-  }
-}
-@media (max-width: 600px) {
-  .ingredients label {
-    font-size: 0.95rem;
-    padding: 0.4rem 0.6rem;
+  .ingredients,
+  .search-section,
+  .suggestions-section {
+    padding: 0 1rem;
+    max-width: 100%;
   }
 
   .toggle-ingredients-btn {
     width: 100%;
-  }
-}
-@media (max-width: 600px) {
-  .drink-details {
-    padding: 1rem;
-    font-size: 0.95rem;
-  }
-
-  .drink-details img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto 1rem auto;
+    margin-bottom: 1rem;
   }
 }
